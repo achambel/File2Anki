@@ -1,0 +1,41 @@
+<div class="ui raised segment">
+  <a class="ui blue ribbon label">Statistics</a>
+  <p></p>
+  <% if @converter.has_sentences? %>
+    <p>
+      Total of cards:
+      <span class="ui circular label"><%= @converter.to_card.size %></span>
+    </p>
+
+    <p>
+      Total of words in Questions:
+      <span class="ui circular label"><%= @converter.resume[:questions] %></span>
+    </p>
+
+    <p>
+      Total of words in Answers:
+      <span class="ui circular label"><%= @converter.resume[:answers] %></span>
+    </p>
+
+    <a class="ui labeled icon massive teal button" id="ankifile">
+      <i class="download icon"></i>
+      Download
+    </a>
+
+    <%= javascript_tag do %>
+      var ankifile = document.querySelector('#ankifile');
+      var data = '<%= raw escape_javascript(@converter.buffer) %>';
+      ankifile.href = window.URL.createObjectURL(new Blob([data], {type:'text/plain;charset=utf-8'}));
+      ankifile.download = '<%= "#{@converter.file.original_filename}-ToAnki.txt" %>';
+    <% end %>
+
+    <% else %>
+    <p class="ui message info">
+      Not found marks. Its mean we read your file, but it have not "q:" and "a:" at begin's paragraphs.
+    </p>
+  <% end %>
+
+  <%= link_to converters_path, class: 'ui labeled icon massive teal button' do %>
+    <i class="upload icon"></i>New Convert
+  <% end %>
+</div>

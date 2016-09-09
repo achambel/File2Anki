@@ -1,0 +1,14 @@
+<%= render 'partials/error_messages', object: @converter %>
+
+<div class="ui raised segment">
+  <a class="ui blue ribbon label">Welcome to File2Anki</a>
+  <p></p>
+  <%= form_tag({controller: 'converters', action: 'upload'}, { multipart: true }) do |f| %>
+      <div class="ui buttons">
+        <%= file_field_tag :file, required: true, class: 'ui button' %>
+        <button type="submit" class="ui labeled icon teal button" id="ankifile">
+          <i class="upload icon"></i>Convert
+        </button>
+      </div>
+  <% end %>
+</div>

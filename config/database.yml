@@ -1,0 +1,26 @@
+dev_test: &dev_test
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: file2anki_development
+  <<: *dev_test
+
+test:
+  <<: *default
+  database: file2anki_test
+  <<: *dev_test
+
+production:
+  <<: *default
+  database: file2anki_production
+  username: file2anki
+  password: <%= ENV['FILE2ANKI_DATABASE_PASSWORD'] %>
