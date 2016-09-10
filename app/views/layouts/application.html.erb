@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <div class="ui container">
+    <div class="ui container" style="margin-top: 20px;">
       <% icons = {success: 'smile', error: 'frown', info: 'info', warning: 'warning'} %>
                 <% flash.each do |type, message| %>
                   <%= content_tag :div, nil, class: "ui icon #{type} message" do %>

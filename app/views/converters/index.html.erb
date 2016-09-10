@@ -11,4 +11,29 @@
         </button>
       </div>
   <% end %>
+
+  <h2>This tool is for you if...</h2>
+  <ul>
+  <li>Do you tired to copy your questions/anwers from file and past to anki's flash cards?</li>
+  <li>Do you spend your minutes to formatting phrases and keep it exactly as in your file?</li>
+  </ul>
+  <p>If you said yes for questions above, then for sure, File2Anki is for you!!!</p>
+
+  <h2>Benefits</h2>
+  <ul>
+    <li>Save many minutes of your day by adding phrases to your <a href="http://ankisrs.net/">Anki</a>.</li>
+    <li>Keep format and style of colors, bold, italic at importing file to <a href="http://ankisrs.net/">Anki</a>.</li>
+  </ul>
+
+  <h2>How do I use it?</h2>
+  <ul>
+    <li>Continue editing your document normally, just add prefix "q:" before each question and "a:" before each answer.</li>
+    <li>When finished your document editing in Software Word, save your document as "HTML". Then use this tool for convert to Anki.</li>
+    <%= image_tag 'about-anki.png', class: 'ui centered rounded big image' %>
+  </ul>
+  <%= render 'partials/after_convert'%>
+  <p>
+  Take a look at a card after import and notice how the colors and bold format were kept.
+  </p>
+<%= image_tag 'imported-file.png', class: 'ui centered rounded large image' %>
 </div>

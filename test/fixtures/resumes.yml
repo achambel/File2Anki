@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  file_name: MyString
+  cards: 1
+  questions: 1
+  answers: 1
+  content: MyText
+
+two:
+  file_name: MyString
+  cards: 1
+  questions: 1
+  answers: 1
+  content: MyText

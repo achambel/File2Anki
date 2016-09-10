@@ -17,10 +17,12 @@
       <span class="ui circular label"><%= @converter.resume[:answers] %></span>
     </p>
 
-    <a class="ui labeled icon massive teal button" id="ankifile">
+    <a class="ui labeled icon big green button" id="ankifile">
       <i class="download icon"></i>
       Download
     </a>
+    <%= render 'partials/after_convert'%>
+
 
     <%= javascript_tag do %>
       var ankifile = document.querySelector('#ankifile');
@@ -35,7 +37,7 @@
     </p>
   <% end %>
 
-  <%= link_to converters_path, class: 'ui labeled icon massive teal button' do %>
+  <%= link_to converters_path, class: 'ui labeled icon big button' do %>
     <i class="upload icon"></i>New Convert
   <% end %>
 </div>

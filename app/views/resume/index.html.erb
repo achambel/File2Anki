@@ -1,0 +1,27 @@
+<p class="ui segment">
+  <span class="ui label">Total of convertions:</span>
+  <span class="ui circle blue label"><%= @resume.size %></span>
+</p>
+
+<table class="ui selectable celled stripped table">
+  <thead>
+    <tr>
+      <th>File name</th>
+      <th>Cards</th>
+      <th>Questions words</th>
+      <th>Answers words</th>
+      <th>Created at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @resume.each do |r| %>
+    <tr>
+      <td><%= r.file_name %></td>
+      <td><%= r.cards %></td>
+      <td><%= r.questions %></td>
+      <td><%= r.answers %></td>
+      <td><%= "#{l r.created_at, format: :short} (#{time_ago_in_words(r.created_at)})" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
