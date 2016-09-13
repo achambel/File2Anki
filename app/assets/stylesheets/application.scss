@@ -13,4 +13,4 @@
  *= require_tree .
  *= require_self
  */
- body { background: #ccc url(bg-pattern.png); }
+ body { background: #ccc asset-url('bg-pattern.png'); }
